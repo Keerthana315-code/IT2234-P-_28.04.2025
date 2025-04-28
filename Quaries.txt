@@ -1,0 +1,13 @@
+use unidb
+db.students.updateOne({regno:'2021ICT73'},{$push:{skills:'PHP'}})
+db.degree.find()
+db.degree.updateMany({duration:{$gte:4}},{$inc:{duration:1}})
+db.degree.updateOne({_id:ObjectId('680eef6c2d340d15b44f9725')},{$set:{num:'BIT',duration:3}})
+db.degree.findOne({{_id:ObjectId('680eef6c2d340d15b44f9725')})
+db.degree.deleteMany({duration:{$lt:4}})
+db.degree.find({},{name:1,_id:0}).pretty()
+db.degree.find().projection(['name','duration'])
+db.degree.find().projection([{'name':1},{'_id':-1}])
+db.degree.deleteOne({_id:ObjectId('680ee9432d340d15b44f970d')})
+use sampledb
+db.dropDatabase()
